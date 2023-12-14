@@ -25,3 +25,10 @@ def addContact(request, id=None):
             except ValidationError as e:
                 form.add_error(None, e)
     return render(request, 'addContact.html', {'form': form})
+
+def deleteContact(request,id):
+    contact = get_object_or_404(Contact, id=id)
+    if request.method == 'POST':
+        contact.delete()
+        return HttpResponseRedirect(reverse('index'))  # Redirect to your contact list view
+    return render(request, 'confirm_delete.html', {'contact': contact})
