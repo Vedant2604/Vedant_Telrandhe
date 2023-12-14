@@ -18,8 +18,8 @@
 
 <body>
     <div class="container">
-        <h1 style="color:Blue;">Contact Management</h1>
-        <a href="{% url 'addContact' %}"><button id="new3" class="btn btn-danger">Create a New Contact</button></a>
+        <h1 style="color:Blue;" class="display-3" >Contact Management</h1>
+        <a href="{% url 'addContact' %}"><button id="new3" class="btn btn-success">Create a New Contact</button></a>
         <br><br>
         <table id="customers" class="table" border="1">
             <thead class="thead-dark text-center"> 
@@ -35,7 +35,7 @@
                 <td class="text-center">{{ contact.created_at }}</td>
                 <td class="text-center">
                     <a href="{% url 'updateContact' contact.id %}">
-                        <button class="btn btn-danger icon-btn">
+                        <button class="btn btn-primary icon-btn">
                             <i class="fas fa-edit"></i>
                         </button>
                     </a>
@@ -45,7 +45,7 @@
                         </button>
                     </a>
                     <a href="{% url 'viewDetails' contact.id %}">
-                        <button class="btn btn-danger icon-btn">
+                        <button class="btn btn-success icon-btn">
                             <i class="fas fa-info-circle"></i>
                         </button>
                     </a>

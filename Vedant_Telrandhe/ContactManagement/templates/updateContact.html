@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
 {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -21,8 +24,8 @@
             <input type="text" name="first" value="{{contact.emailId}}"><br><br>
             <label for="">Notes</label><br><br>
             <input type="textarea" name="first" value="{{contact.notes}}"><br><br> {% endcomment %}
-            <button type="submit" id="new1" value="Update Contact">Update</button>
-            <a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <button type="submit" class="btn btn-primary" value="Update Contact">Update</button>
+            <a href="{% url 'index' %}"><button type="button"  class="btn btn-danger">Cancel</button></a>
         </form>
 
         <footer class="pt-4">

@@ -1,59 +1,25 @@
-<h2>Are you sure you want to delete {{ contact.fullname }}?</h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<h1 style="color:Blue;text-align: center;">Confirm Delete</h1>
+
+<h5>Are you sure you want to delete {{ contact.fullname }}?</h5>
+    
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Confirm</button>
-    <a href="{% url 'index' %}">Cancel</a>
+    <button type="submit"  class="btn btn-danger">Delete</button>
+    <a href="{% url 'index' %}"><button type="button" style="background-color: blue" class="btn btn-danger">Cancel</button>
 </form>
 
-
-
-{% comment %} <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Confirm Delete</title>
-    
-        <!-- Include SweetAlert2 and any other necessary CSS/JS libraries -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
-        <!-- Add other stylesheets or scripts here if needed -->
-    
-        <!-- Include your JavaScript reference -->
-        <script src="{% static 'js/myscript.js' %}"></script>
-    </head>
-<body>
-
-    <button class="btn btn-danger icon-btn" id="delete-btn">
-        <i class="fas fa-trash"></i>
-    </button>
-    
-    <script>
-        // Add an event listener to the delete button
-        document.getElementById('delete-btn').addEventListener('click', function () {
-            Swal.fire({
-                title: 'Delete Contact?',
-                text: 'Are you sure you want to delete this contact?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#d33',
-                cancelButtonColor: '#3085d6',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Submit the form when confirmed
-                    document.getElementById('delete-form').submit();
-                }
-            });
-        });
-    </script>
-    
-    <form method="POST" action="{% url 'deleteContact' contact.id %}" id="delete-form" style="display: none;">
-        {% csrf_token %}
-    </form>
-    
-
-</body>
-</html>
-
- {% endcomment %}
+<br><br>
+<footer class="pt-4">
+    <hr />
+    <p class="text-center" style="color:Green;" >&copy;&nbsp;Created By Vedant Telrandhe</p>
+</footer>
