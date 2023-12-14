@@ -15,7 +15,7 @@
 
 <body>
     <div class="container2">
-        <h1>Update Contact</h1>
+        <h1><b>Update Contact</b></h1><br></br>
         <form action="{% url 'updateContact' contact.id %}" method="post">
             {%csrf_token%}{{ form.as_p }}
             {% comment %} <label for="">Name</label><br><br>

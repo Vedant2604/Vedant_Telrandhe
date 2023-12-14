@@ -19,7 +19,7 @@
 
 <body>
     <div class="container">
-        <h1 style="color:Blue;">Contact Information</h1>
+        <h1 style="color:Black;">Contact Information</h1>
         <br><br>
         <table id="customers" class="table" border="1">
             <thead class="thead-dark"> 
@@ -44,13 +44,13 @@
         <br><br>
 
         <a href="{% url 'index' %}">
-            <button id="new3" class="btn btn-danger">
+            <button id="new3" class="btn btn-warning">
                 <i class="fas fa-home"></i>
             </button>
         </a>
         
         <a href="{% url 'updateContact' contact.id %}">
-            <button class="btn btn-danger icon-btn">
+            <button class="btn btn-primary icon-btn">
                 <i class="fas fa-edit"></i>
             </button>
         </a>

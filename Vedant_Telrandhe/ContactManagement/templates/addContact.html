@@ -16,7 +16,7 @@
 
 <body>
     <div class="container1">
-        <h1>Create a Contact</h1>
+        <h1 style="color:black;"><b>Create a Contact</b></h1>
         <form action="{% url 'addContact'%}" method="post">
             {%csrf_token%}
             {{ form.non_field_errors }}

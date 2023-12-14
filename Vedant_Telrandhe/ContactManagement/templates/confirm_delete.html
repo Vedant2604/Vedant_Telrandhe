@@ -8,14 +8,14 @@
     {% bootstrap_css %}
     {% bootstrap_javascript %}
 </head>
-<h1 style="color:Blue;text-align: center;">Confirm Delete</h1>
+<h1 style="color:Black;text-align: center;"><b>Confirm Delete</b></h1>
 
 <h5>Are you sure you want to delete {{ contact.fullname }}?</h5>
     
 <form method="post">
     {% csrf_token %}
     <button type="submit"  class="btn btn-danger">Delete</button>
-    <a href="{% url 'index' %}"><button type="button" style="background-color: blue" class="btn btn-danger">Cancel</button>
+    <a href="{% url 'index' %}"><button type="button" class="btn btn-primary">Cancel</button>
 </form>
 
 <br><br>
