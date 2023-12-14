@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<body>
+    <div class="container2">
+        <h1>Update Contact</h1>
+        <form action="{% url 'updateContact' contact.id %}" method="post">
+            {%csrf_token%}{{ form.as_p }}
+            {% comment %} <label for="">Name</label><br><br>
+            <input type="text" name="first" value="{{contact.fullname}}"><br><br>
+            <label for="">Email</label><br><br>
+            <input type="text" name="first" value="{{contact.emailId}}"><br><br>
+            <label for="">Notes</label><br><br>
+            <input type="textarea" name="first" value="{{contact.notes}}"><br><br> {% endcomment %}
+            <button type="submit" id="new1" value="Update Contact">Update</button>
+            <a href="{% url 'index' %}"><button type="button" class="btn btn-danger">Cancel</button></a>
+        </form>
+
+        <footer class="pt-4">
+            <hr />
+            <p class="text-center" style="color:Green;" >&copy;&nbsp;Created By Vedant Telrandhe</p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

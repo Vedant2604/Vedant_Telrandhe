@@ -32,3 +32,20 @@ def deleteContact(request,id):
         contact.delete()
         return HttpResponseRedirect(reverse('index'))  # Redirect to your contact list view
     return render(request, 'confirm_delete.html', {'contact': contact})
+
+def updateContact(request, id):
+    # Retrieve the existing contact or return a 404 error if it doesn't exist
+    contact = get_object_or_404(Contact, id=id)
+
+    if request.method == 'POST':
+        form = ContactForm(request.POST, instance=contact)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('index') 
+            except ValidationError as e:
+                form.add_error(None, e)
+    else:
+        form = ContactForm(instance=contact)
+
+    return render(request, 'updateContact.html', {'form': form, 'contact': contact})
