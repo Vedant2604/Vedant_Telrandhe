@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        h1 {text-align: center;}
+        </style>
+    <title>Document</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="color:Blue;">Contact Information</h1>
+        <br><br>
+        <table id="customers" class="table" border="1">
+            <thead class="thead-dark"> 
+                <tr> 
+                    <th>Name</th>
+                    <td> {{ contact.fullname }} </td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ contact.emailId }}</td>
+                </tr>
+                <tr>
+                    <th>Created Time</th>
+                    <td>{{ contact.created_at }}</td>
+                </tr>
+                <tr>
+                    <th>Notes</th>
+                    <td>{{ contact.notes }}</td>
+                </tr>
+            </thead>
+        </table>
+        <br><br>
+
+        <a href="{% url 'index' %}">
+            <button id="new3" class="btn btn-danger">
+                <i class="fas fa-home"></i>
+            </button>
+        </a>
+        
+        <a href="{% url 'updateContact' contact.id %}">
+            <button class="btn btn-danger icon-btn">
+                <i class="fas fa-edit"></i>
+            </button>
+        </a>
+        <a href="{% url 'deleteContact' contact.id %}">
+            <button class="btn btn-danger icon-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+        </a>
+        
+        <footer class="pt-4">
+            <hr />
+            <p class="text-center" style="color:Green;" >&copy;&nbsp;Created By Vedant Telrandhe</p>
+        </footer>
+    </div>
+</body>
+
+</html>

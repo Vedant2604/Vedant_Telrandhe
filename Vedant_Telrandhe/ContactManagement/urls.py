@@ -7,4 +7,5 @@ urlpatterns = [
     path('addContact/',views.addContact,name="addContact"),
     path('deleteContact/<int:id>/',views.deleteContact,name="deleteContact"),
     path('updateContact/<int:id>/',views.updateContact,name="updateContact"),
+    path('viewDetails/<int:id>/', views.viewDetails, name="viewDetails")
 ]

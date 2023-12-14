@@ -49,3 +49,7 @@ def updateContact(request, id):
         form = ContactForm(instance=contact)
 
     return render(request, 'updateContact.html', {'form': form, 'contact': contact})
+
+def viewDetails(request, id):
+    contact = get_object_or_404(Contact, pk=id)
+    return render(request, 'viewDetails.html', {'contact': contact})
