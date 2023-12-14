@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 {text-align: center;}
+        </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="color:Blue;">Contact Management</h1>
+        <a href="{% url 'addContact' %}"><button id="new3" class="btn btn-danger">Create a New Contact</button></a>
+        <br><br>
+        <table id="customers" class="table" border="1">
+            <thead class="thead-dark text-center"> 
+                <th>Name</th>
+                <th>Email</th>
+                <th>Created Time</th>
+                <th>Action</th>
+            </thead>
+            {% for contact in contacts %}
+            <tr>
+                <td class="text-center">{{ contact.fullname }}</td>
+                <td class="text-center">{{ contact.emailId }}</td>
+                <td class="text-center">{{ contact.created_at }}</td>
+                <td class="text-center">
+                    <a href="{% url 'updateContact' contact.id %}">
+                        <button class="btn btn-danger icon-btn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </a>
+                    <a href="{% url 'deleteContact' contact.id %}">
+                        <button class="btn btn-danger icon-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </a>
+                    <a href="{% url 'viewDetails' contact.id %}">
+                        <button class="btn btn-danger icon-btn">
+                            <i class="fas fa-info-circle"></i>
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+        <br><br>
+        <footer class="pt-4">
+            <hr />
+            <p class="text-center" style="color:Green;" >&copy;&nbsp;Created By Vedant Telrandhe</p>
+        </footer>
+        
+    </div>
+</body>
+
+</html>
